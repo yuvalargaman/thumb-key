@@ -142,6 +142,7 @@ import com.dessalines.thumbkey.keyboards.KB_GRNORM_THUMBKEY_SYMBOLS
 import com.dessalines.thumbkey.keyboards.KB_GR_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_SYMBOLS
+import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_SYMBOLS_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_HE_MESSAGEASE_TWO_HANDS
 import com.dessalines.thumbkey.keyboards.KB_HE_THUMBKEY
 import com.dessalines.thumbkey.keyboards.KB_HI_THUMBKEY
@@ -488,4 +489,7 @@ enum class KeyboardLayout(
     ENThumbKeyShift(KB_EN_THUMBKEY_SHIFT), // english thumb-key shift
     TOKThumbKeyLettersShift(KB_TOK_THUMBKEY_LETTERS_SHIFT), // toki pona thumb-key letters shift
     HEMessagEaseTwoHands(KB_HE_MESSAGEASE_TWO_HANDS), // עברית messagease two-hands
+    HEMessagEaseSymbolsTwoHands(
+        KB_HE_MESSAGEASE_SYMBOLS_TWO_HANDS,
+    ), // עברית messagease symbols two-hands
 }
