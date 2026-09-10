@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,3 +23,13 @@ jobs:
         with:
           name: thumb-key-debug-apk
           path: app/build/outputs/apk/debug/*.apk
+      # A release asset is a plain .apk on a public URL, so it installs straight
+      # from the phone browser -- no login and no zip, unlike a run artifact.
+      - name: Publish the APK as a release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "debug-$(date -u +%Y%m%d-%H%M%S)" \
+            app/build/outputs/apk/debug/*.apk \
+            --title "Thumb-Key debug build" \
+            --notes "Debug build of ${{ github.ref_name }} (${{ github.sha }}). Installs alongside the store version."
